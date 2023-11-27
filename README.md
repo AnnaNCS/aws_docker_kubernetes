@@ -24,29 +24,23 @@ TO create and push a tga, run the following:
 - docker images
 - docker push [newly created iamge]  #annancs/cloud-docker-kubrnt:latest    
 
-After installing your Minikube, you can use the following commands to check on your deployemnst and pods: 
-- kubectl get nodes
-- kubectl get deployments  
-- kubectl get pods -o wide
+After installing your Minikube: 
+- minikube start
 
 to continue with deployemnt: 
-- kubectl create -f taskapp-dep.yaml 
-- kubectl scale deployment tasksapp --replicas=3
+# make sure you est up kompose on our machine first
+- kompose convert 
+- kubectl create -f mongo-data-persistentvolumeclaim.yaml,mongo-deployment.yaml,mongo-service.yaml,web-deployment.yaml,web-service.yaml
+- minikube service web 
+to view your creations:
 - kubectl get pods -o wide
-- kubectl create -f taskapp-svc.yaml 
-- kubectl get svc tasksapp-svc
-- kubectl create -f mongo-pv.yaml
-- kubectl get pv
-- kubectl create -f mongo-pvc.yaml
 - kubectl get pvc
 - kubectl get pv
-- kubectl create -f mongo-dep.yaml 
 - kubectl get deployments
-- kubectl create -f mongo-svc.yaml
-- kubectl get svc mongo
+- kubectl get svc 
 
 you can check all your resources with this command:
 - minikube dashboard 
 
-to clean up use: 
+to clean up creations: 
 - kubectl delete deployments OR pods --all
