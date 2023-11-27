@@ -5,7 +5,6 @@
 2. Shivam Shekhar
 ```
 
-
 In order to run this app locally: 
 Download and clone the repository.
 Run the requirmnets files. 
@@ -29,8 +28,11 @@ After installing your Minikube:
 
 to continue with deployemnt: 
 # make sure you est up kompose on our machine first
+- mkdir wp-manifests 
+- mv docker-compose.yaml wp-manifests
+- cd wp-manifests 
 - kompose convert 
-- kubectl create -f mongo-data-persistentvolumeclaim.yaml,mongo-deployment.yaml,mongo-service.yaml,web-deployment.yaml,web-service.yaml
+kubectl create -f mongo-data-persistentvolumeclaim.yaml,mongo-deployment.yaml,mongo-service.yaml,web-deployment.yaml,web-service.yaml
 - minikube service web 
 to view your creations:
 - kubectl get pods -o wide
@@ -44,3 +46,23 @@ you can check all your resources with this command:
 
 to clean up creations: 
 - kubectl delete deployments OR pods --all
+
+PART 4: 
+
+makes sure to have aws installed: 
+https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html
+
+run: 
+- aws config
+- aws eks update-kubeconfig \
+  	--region us-east-2 \
+  	--name EKScluster
+
+you can check your new cluster by running: 
+- kubectl config get-clusters
+
+- kubectl create -f eks-deployment.yaml,eks-service.yaml
+
+update the config for your cluster: 
+- aws eks --region us-east-2 update-kubeconfig --name [EKD cluster name]
+

@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: eks
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: eks
+  template:
+    metadata:
+      labels:
+        app: eks
+    spec:
+      containers:
+        - name: eks
+          image: annancs/cloud-docker-kubrnt:latest
+          ports:
+            - containerPort: 8080
