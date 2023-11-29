@@ -1,0 +1,17 @@
+apiVersion: eksctl.io/v1alpha5
+kind: ClusterConfig
+
+metadata:
+  name: EKSclusterARM
+  region: us-east-1
+
+nodeGroups:
+- name: eks-nodes
+  instanceType: t2.micro
+
+managedNodeGroups:
+- name: mn
+  instanceSelector:
+    vCPUs: 2
+    memory: 2GiB
+    cpuArchitecture: arm64

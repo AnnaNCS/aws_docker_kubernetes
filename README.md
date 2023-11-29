@@ -52,17 +52,23 @@ PART 4:
 makes sure to have aws installed: 
 https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html
 
-run: 
-- aws config
+run:
+Make sure you have eksclt installed 
+- eksclt crea cluster with the yaml file
+
+
+<!-- - aws configure
 - aws eks update-kubeconfig \
   	--region us-east-2 \
-  	--name EKScluster
+  	--name EKScluster -->
 
 you can check your new cluster by running: 
 - kubectl config get-clusters
 
 - kubectl create -f eks-deployment.yaml,eks-service.yaml
 
-update the config for your cluster: 
-- aws eks --region us-east-2 update-kubeconfig --name [EKD cluster name]
+<!-- update the config for your cluster: 
+- aws eks --region us-east-2 update-kubeconfig --name [EKD cluster name] -->
 
+
+kubectl expose deployment eks --type=LoadBalancer --name=exposed
