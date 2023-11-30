@@ -56,19 +56,17 @@ run:
 Make sure you have eksclt installed 
 - eksclt crea cluster with the yaml file
 
-
-<!-- - aws configure
-- aws eks update-kubeconfig \
-  	--region us-east-2 \
-  	--name EKScluster -->
-
 you can check your new cluster by running: 
 - kubectl config get-clusters
 
-- kubectl create -f eks-deployment.yaml,eks-service.yaml
+Part 4 arch bug fixing: 
 
-<!-- update the config for your cluster: 
-- aws eks --region us-east-2 update-kubeconfig --name [EKD cluster name] -->
+- docker buildx build -t annancs/cloud-docker-kubrnt:amd64 --platform linux/amd64 .
 
+- docker push annancs/cloud-docker-kubrnt:amd64
 
-kubectl expose deployment eks --type=LoadBalancer --name=exposed
+Before you apply don't forget to hcnage the latest to the amd64
+- kubectl apply -f mongo-deployment.yaml,mongo-service.yaml,web-deployment.yaml,web-service.yaml
+
+- kubeclt get svc
+linkg + port = BAM 
