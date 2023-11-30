@@ -74,3 +74,6 @@ linkg + port = BAM
 Part 6: 
 - docker buildx build -t annancs/cloud-docker-kubrnt:amd64v.2 --platform linux/amd64 .
 - docker push annancs/cloud-docker-kubrnt:amd64
+
+Part 7:
+ 

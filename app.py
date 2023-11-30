@@ -21,6 +21,23 @@ def redirect_url():
 		request.referrer or \
 		url_for('index')
 
+global return_status
+return_status=200
+
+@app.route('/health')
+def health ():
+	return '', return_status
+
+@app.route('/ready')
+def ready ():
+	return '', return_status
+
+@app.route('/crash')
+def crash ():
+	global return_status
+	return_status=12345
+	return '', 200
+
 @app.route("/list")
 def lists ():
 	#Display the all Tasks
