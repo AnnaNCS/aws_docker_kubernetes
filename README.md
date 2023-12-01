@@ -76,3 +76,13 @@ Part 6:
 - docker push annancs/cloud-docker-kubrnt:amd64
 
 Part 7:
+
+Part 8: 
+
+git clone https://github.com/techiescamp/kubernetes-prometheus
+kubectl create namespace monitoring
+kubectl create -f clusterRole.yaml,config-map.yaml,prometheus-deployment.yaml 
+kubectl get deployments --namespace=monitoring
+kubectl get pods --namespace=monitoring
+kubectl port-forward [URPODNAME] 8080:9090 -n monitoring
+kubectl create -f prometheus-service.yaml --namespace=monitoring
