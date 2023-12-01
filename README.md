@@ -54,7 +54,7 @@ https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html
 
 run:
 Make sure you have eksclt installed 
-- eksclt crea cluster with the yaml file
+- eksctl create cluster -f eks-cluster.yaml
 
 you can check your new cluster by running: 
 - kubectl config get-clusters
@@ -76,4 +76,3 @@ Part 6:
 - docker push annancs/cloud-docker-kubrnt:amd64
 
 Part 7:
- 
