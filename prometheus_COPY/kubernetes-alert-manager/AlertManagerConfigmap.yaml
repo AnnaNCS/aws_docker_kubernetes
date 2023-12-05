@@ -1,0 +1,21 @@
+kind: ConfigMap
+apiVersion: v1
+metadata:
+  name: alertmanager-config
+  namespace: monitoring
+data:
+  config.yml: |-
+    global:
+      resolve_timeout: 1m
+      slack_api_url: 'https://hooks.slack.com/services/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'
+
+    route:
+      receiver: 'slack-notification'
+
+    receivers:
+    - name: 'slack-notification'
+      slack_configs:
+      - channel: '#alert'
+        send_resolved: true
+    
+    

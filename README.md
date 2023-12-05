@@ -86,6 +86,7 @@ Useful resources:
 https://devopscube.com/alert-manager-kubernetes-guide/#
 https://devopscube.com/setup-kube-state-metrics/
 https://devopscube.com/setup-prometheus-monitoring-on-kubernetes/
+https://grafana.com/blog/2020/02/25/step-by-step-guide-to-setting-up-prometheus-alertmanager-with-slack-pagerduty-and-gmail/#step-1-create-alerting-rules-in-prometheus
 
 Useful commands: 
 kubectl create -f clusterRole.yaml,config-map.yaml,prometheus-deployment.yaml,prometheus-service.yaml 
