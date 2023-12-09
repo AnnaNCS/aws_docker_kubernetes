@@ -89,6 +89,7 @@ https://devopscube.com/setup-prometheus-monitoring-on-kubernetes/
 https://grafana.com/blog/2020/02/25/step-by-step-guide-to-setting-up-prometheus-alertmanager-with-slack-pagerduty-and-gmail/#step-1-create-alerting-rules-in-prometheus
 
 Useful commands: 
+kubectl create -f cluster-role-binding.yaml,cluster-role.yaml,deployment.yaml,service-account.yaml,service.yaml
 kubectl create -f clusterRole.yaml,config-map.yaml,prometheus-deployment.yaml,prometheus-service.yaml 
 kubectl delete -f clusterRole.yaml,config-map.yaml,prometheus-deployment.yaml,prometheus-service.yaml 
 kubectl create -f AlertManagerConfigmap.yaml,AlertTemplateConfigMap.yaml,Deployment.yaml,Service.yaml

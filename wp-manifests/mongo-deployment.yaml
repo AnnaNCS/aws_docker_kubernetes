@@ -30,14 +30,14 @@ spec:
           ports:
             - containerPort: 27017
           resources: {}
-          # volumeMounts:
-          #   - mountPath: /data/db
-          #     name: mongo-data
+          volumeMounts:
+            - mountPath: /data/db
+              name: mongo-data
       restartPolicy: Always
-      # volumes:
-      #   - name: mongo-data
-      #     persistentVolumeClaim:
-      #       claimName: mongo-data
+      volumes:
+        - name: mongo-data
+          persistentVolumeClaim:
+            claimName: mongo-data
 status: {}
 
-# the commented out part not necessary for part 4
+# the commented out part not necessary for part 4: restartPolicy and volumeMOunts
