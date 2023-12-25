@@ -18,8 +18,10 @@ To run this app locally:
 2. Run the requirements files. 
 
 Part 1.
-If you run into any errors, a potential option could be updating your mongoDB with Brew (follow the instruction in this link: https://www.mongodb.com/docs/manual/tutorial/install-mongodb-on-os-x/#std-label-install-mdb-community-macos)
-Another important update if working on a mac could be is to ensure that you have download the most up-to-date comand lines (thought Apple developer) (Command Line Tools for Xcode 15.1 beta 3)
+If you run into any errors, a potential option could be updating your mongoDB with Brew 
+(follow the instructions in this link: https://www.mongodb.com/docs/manual/tutorial/install-mongodb-on-os-x/#std-label-install-mdb-community-macos)
+Another important update if working on a mac could be is to ensure that you have downloaded the most up-to-date command lines 
+(thought Apple developer) (Command Line Tools for Xcode 15.1 beta 3)
 
 Part 2.
 Download Docker and create the image and the container for your app. 
@@ -89,14 +91,14 @@ https://devopscube.com/setup-prometheus-monitoring-on-kubernetes/
 https://grafana.com/blog/2020/02/25/step-by-step-guide-to-setting-up-prometheus-alertmanager-with-slack-pagerduty-and-gmail/#step-1-create-alerting-rules-in-prometheus
 
 Useful commands: 
-kubectl create -f cluster-role-binding.yaml,cluster-role.yaml,deployment.yaml,service-account.yaml,service.yaml
-kubectl create -f clusterRole.yaml,config-map.yaml,prometheus-deployment.yaml,prometheus-service.yaml 
-kubectl delete -f clusterRole.yaml,config-map.yaml,prometheus-deployment.yaml,prometheus-service.yaml 
-kubectl create -f AlertManagerConfigmap.yaml,AlertTemplateConfigMap.yaml,Deployment.yaml,Service.yaml
-kubectl delete -f AlertManagerConfigmap.yaml,AlertTemplateConfigMap.yaml,Deployment.yaml,Service.yaml
-kubectl get deployments --namespace=monitoring
-kubectl get pods --namespace=monitoring
+- kubectl create -f cluster-role-binding.yaml,cluster-role.yaml,deployment.yaml,service-account.yaml,service.yaml
+- kubectl create -f clusterRole.yaml,config-map.yaml,prometheus-deployment.yaml,prometheus-service.yaml 
+- kubectl delete -f clusterRole.yaml,config-map.yaml,prometheus-deployment.yaml,prometheus-service.yaml 
+- kubectl create -f AlertManagerConfigmap.yaml,AlertTemplateConfigMap.yaml,Deployment.yaml,Service.yaml
+- kubectl delete -f AlertManagerConfigmap.yaml,AlertTemplateConfigMap.yaml,Deployment.yaml,Service.yaml
+- kubectl get deployments --namespace=monitoring
+- kubectl get pods --namespace=monitoring
 for Prometheus:
-kubectl port-forward [PROMPODNAME] 8080:9090 -n monitoring
+- kubectl port-forward [PROMPODNAME] 8080:9090 -n monitoring
 for alert:
-kubectl port-forward [ALERTPODNAME] 9093:9093 -n monitoring
+- kubectl port-forward [ALERTPODNAME] 9093:9093 -n monitoring
